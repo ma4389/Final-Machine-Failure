@@ -7,11 +7,11 @@ df = pd.read_csv('ai4i2020.csv')
 if 'Unnamed: 0' in df.columns:
     df = df.drop(columns=['Unnamed: 0'])
 
-# Drop 'UDI' and 'Product ID' columns
+# Drop 'UDI' column
 df = df.drop(columns='UDI', errors='ignore')
 
 # Excluded columns where 1 and 0 will be replaced with 'Yes' and 'No'
-excluded_columns = ['Machine failure', 'OSF', 'TWF', 'PWF', 'RNF','HDF']
+excluded_columns = ['Machine failure', 'OSF', 'TWF', 'PWF', 'RNF', 'HDF']
 
 # Replace 1 and 0 with 'Yes' and 'No' in the excluded columns
 df[excluded_columns] = df[excluded_columns].replace({1: 'Yes', 0: 'No'})
@@ -27,7 +27,10 @@ chart_type = st.sidebar.selectbox("Choose a chart type", ["Bar", "Line", "Pie"])
 
 # Univariate Analysis
 st.header("Univariate Analysis")
-univariate_col = st.selectbox("Select a column for univariate analysis", df.columns)
+
+# Filter out 'Product ID' from the selectable columns
+univariate_columns = [col for col in df.columns if col != 'Product ID']
+univariate_col = st.selectbox("Select a column for univariate analysis", univariate_columns)
 
 if univariate_col in df.columns:
     # Filter the top 20 for univariate analysis
