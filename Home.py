@@ -41,7 +41,7 @@ This Machine Failure Dashboard likely contains information about various machine
 """)
 
 # Load the machine failure dataset
-machine_failure = pd.read_csv(r'C:\Users\Hamada\Downloads\archive (16)\ai4i2020.csv')  # Replace with the actual file name
+machine_failure = pd.read_csv('ai4i2020.csv')  # Replace with the actual file name
 
 machine_failure.dropna(inplace=True)
 st.subheader('Here is a Sample of the Dataset')
