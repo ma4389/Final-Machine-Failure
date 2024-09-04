@@ -50,13 +50,13 @@ else:
 
 # Bivariate Analysis
 st.header("Bivariate Analysis")
-bivariate_col1 = st.selectbox("Select first column for bivariate analysis", df.columns)
+bivariate_col1 = st.selectbox("Select first column for bivariate analysis (categorical)", df.select_dtypes(include=['object', 'category']).columns)
 
 # Exclude specified columns from the dropdown
 numeric_cols = df.select_dtypes(include=['number']).columns
 filtered_columns = [col for col in numeric_cols if col not in excluded_columns]
 
-bivariate_col2 = st.selectbox("Select second column for bivariate analysis", filtered_columns, index=1)
+bivariate_col2 = st.selectbox("Select second column for bivariate analysis (numeric)", filtered_columns, index=1)
 
 # Columns for median analysis (including Heat and OverStrain)
 median_columns = ['Process temperature [K]', 'Air temperature [K]', 'Torque [Nm]', 'Tool wear [min]', 'Heat', 'OverStrain']
@@ -82,13 +82,13 @@ else:
 
 # Multivariate Analysis
 st.header("Multivariate Analysis")
-multivariate_col1 = st.selectbox("Select first column for analysis", df.columns)
+multivariate_col1 = st.selectbox("Select first column for analysis (categorical)", df.select_dtypes(include=['object', 'category']).columns)
 
 # Filter out categorical columns and the excluded columns for multivariate_col2
 filtered_multivariate_columns = [col for col in numeric_cols if col not in excluded_columns]
-multivariate_col2 = st.selectbox("Select second column for analysis", filtered_multivariate_columns, index=1)
+multivariate_col2 = st.selectbox("Select second column for analysis (numeric)", filtered_multivariate_columns, index=1)
 
-color_col = st.selectbox("Optional: Select a column for color", [None] + list(df.columns), index=0)
+color_col = st.selectbox("Optional: Select a column for color (categorical)", [None] + list(df.select_dtypes(include=['object', 'category']).columns), index=0)
 
 # Ensure only numeric columns are considered for aggregation
 if multivariate_col2 in numeric_cols and multivariate_col1 in df.columns:
