@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 
 # Load pre-trained model (replace with the actual model path)
-model = joblib.load(r'E:\New folder\xgb_grid.pkl')
+model = joblib.load('xgb_grid.pkl')
 
 # Load and prepare initial dataset to determine preprocessing requirements
 ai = pd.read_csv('ai4cleaned.csv')
