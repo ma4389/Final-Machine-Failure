@@ -8,7 +8,7 @@ if 'Unnamed: 0' in df.columns:
     df = df.drop(columns=['Unnamed: 0'])
 
 # Drop 'UDI' and 'Product ID' columns
-df = df.drop(columns=['UDI', 'Product ID'], errors='ignore')
+df = df.drop(columns='UDI', errors='ignore')
 
 # Excluded columns where 1 and 0 will be replaced with 'Yes' and 'No'
 excluded_columns = ['Machine failure', 'OSF', 'TWF', 'PWF', 'RNF','HDF']
