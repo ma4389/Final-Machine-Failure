@@ -17,7 +17,7 @@ if df is not None:
     df['Heat'] = df['Air temperature [K]'] - df['Process temperature [K]']
 
     # 1. Top Product IDs by Machine Failure When it's 1 or Yes
-    st.header("1. Top Product IDs by Machine Failure When there's a Machine Failure")
+    st.header("1.  Product IDs by Machine Failure When there's a Machine Failure")
     failure_product_ids = df[df['Machine failure'] == 1]['Product ID'].value_counts().nlargest(5).reset_index()
     failure_product_ids.columns = ['Product ID', 'Failure']
     fig1 = px.bar(failure_product_ids, x='Product ID', y='Failure',
