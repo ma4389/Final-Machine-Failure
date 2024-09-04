@@ -22,7 +22,7 @@ if df is not None:
     failure_product_ids.columns = ['Product ID', 'Failure']
     fig1 = px.bar(failure_product_ids, x='Product ID', y='Failure',
                   title='Top 5 Product IDs by Machine Failure',
-                  labels={'Failure Count': 'Number of Failures'}, 
+                  labels={'Failure Count': 'Failure'}, 
                   color='Product ID')
     st.plotly_chart(fig1)
 
