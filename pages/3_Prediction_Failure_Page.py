@@ -6,7 +6,7 @@ import joblib
 from sklearn.model_selection import GridSearchCV
 
 # Load pre-trained model (replace with the actual model path)
-model = joblib.load('xgb_grid.pkl')
+model = joblib.load('pages/xgb_grid.pkl')
 
 # Load and prepare initial dataset to determine preprocessing requirements
 ai = pd.read_csv('ai4cleaned.csv')
