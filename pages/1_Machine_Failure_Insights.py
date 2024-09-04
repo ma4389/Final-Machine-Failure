@@ -19,8 +19,8 @@ if df is not None:
     # 1. Top Product IDs by Machine Failure When it's 1 or Yes
     st.header("1. Top Product IDs by Machine Failure When there's a Machine Failure")
     failure_product_ids = df[df['Machine failure'] == 1]['Product ID'].value_counts().nlargest(5).reset_index()
-    failure_product_ids.columns = ['Product ID', 'Failure Count']
-    fig1 = px.bar(failure_product_ids, x='Product ID', y='Failure Count',
+    failure_product_ids.columns = ['Product ID', 'Failure']
+    fig1 = px.bar(failure_product_ids, x='Product ID', y='Failure',
                   title='Top 5 Product IDs by Machine Failure',
                   labels={'Failure Count': 'Number of Failures'}, 
                   color='Product ID')
