@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 import joblib
+from sklearn.model_selection import GridSearchCV
 
 # Load pre-trained model (replace with the actual model path)
 model = joblib.load('xgb_grid.pkl')
