@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Load the dataset and drop the 'Unnamed: 0' column if it exists
-df = pd.read_csv(r'C:\Users\Hamada\Downloads\archive (16)\ai4i2020.csv')
+df = pd.read_csv('ai4i2020.csv')
 if 'Unnamed: 0' in df.columns:
     df = df.drop(columns=['Unnamed: 0'])
 
