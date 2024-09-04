@@ -39,8 +39,6 @@ for col in X.columns:
 # Convert the manual input into a DataFrame
 manual_input_df = pd.DataFrame([manual_input])
 
-# Display input data
-st.write("Manual Input Data:", manual_input_df)
 
 # Fit the scaler on the entire dataset (X) and transform the manual input data
 scaler = StandardScaler()
