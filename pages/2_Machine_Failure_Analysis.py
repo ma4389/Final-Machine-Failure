@@ -16,6 +16,11 @@ excluded_columns = ['Machine failure', 'OSF', 'TWF', 'PWF', 'RNF','HDF']
 # Replace 1 and 0 with 'Yes' and 'No' in the excluded columns
 df[excluded_columns] = df[excluded_columns].replace({1: 'Yes', 0: 'No'})
 
+# Calculate new features
+df['Power'] = df['Torque [Nm]'] * df['Rotational speed [rpm]']
+df['Heat'] = df['Air temperature [K]'] - df['Process temperature [K]']
+df['OverStrain'] = df['Tool wear [min]'] * df['Torque [Nm]']
+
 # Sidebar for visualization type
 st.sidebar.header("Visualization Type")
 chart_type = st.sidebar.selectbox("Choose a chart type", ["Bar", "Line", "Pie"])
@@ -53,8 +58,8 @@ filtered_columns = [col for col in numeric_cols if col not in excluded_columns]
 
 bivariate_col2 = st.selectbox("Select second column for bivariate analysis", filtered_columns, index=1)
 
-# Columns for median analysis
-median_columns = ['Process temperature [K]', 'Air temperature [K]', 'Torque [Nm]', 'Tool wear [min]']
+# Columns for median analysis (including Heat and OverStrain)
+median_columns = ['Process temperature [K]', 'Air temperature [K]', 'Torque [Nm]', 'Tool wear [min]', 'Heat', 'OverStrain']
 
 if bivariate_col2 in numeric_cols and bivariate_col1 in df.columns:
     if bivariate_col2 in median_columns:
@@ -75,7 +80,6 @@ if bivariate_col2 in numeric_cols and bivariate_col1 in df.columns:
 else:
     st.warning(f"Selected column '{bivariate_col2}' is not numeric or '{bivariate_col1}' does not exist in the dataset.")
 
-# Multivariate Analysis
 # Multivariate Analysis
 st.header("Multivariate Analysis")
 multivariate_col1 = st.selectbox("Select first column for analysis", df.columns)
