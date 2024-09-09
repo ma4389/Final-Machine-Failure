@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 from sklearn.model_selection import GridSearchCV
 
-# Load pre-trained model (replace with the actual model path)
+# Load pre-trained model 
 model = joblib.load('pages/xgb_grid.pkl')
 
 # Load and prepare initial dataset to determine preprocessing requirements
