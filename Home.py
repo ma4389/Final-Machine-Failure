@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Title and Header
-st.markdown("<h1 style='text-align: center; color: #191970;'>Machine Failure Data Visualization And Prediction Model</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #191970;'>Machine Failure Data Visualization And Model To Predict too</h1>", unsafe_allow_html=True)
 
 # Image related to machine failure
 image_url = "https://gesrepair.com/wp-content/uploads/35DDEBA8-EA7C-4121-AC06-CEBA29C56D07-1024x592.jpeg"  # Replace with an actual image URL related to machine failure
@@ -10,7 +10,7 @@ st.image(image_url, use_column_width=True)
 
 # Introduction and dataset description
 st.markdown(''' 
-            * This web application presents an Exploratory Data Analysis (EDA) visualization and Model Prediction for a Machine Failure Dataset.
+            * This web application presents an Exploratory Data Analysis (EDA) visualization and  Prediction for a Machine Failure Dataset.
             * The data is obtained from [Kaggle](https://www.kaggle.com/datasets/stephanmatzka/predictive-maintenance-dataset-ai4i-2020/data).
             * You can select one of the options from the sidebar to explore the data.''')
 
