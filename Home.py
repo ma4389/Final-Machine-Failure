@@ -5,7 +5,7 @@ import pandas as pd
 st.markdown("<h1 style='text-align: center; color: #191970;'>Machine Failure Data Visualization And Model To Predict too</h1>", unsafe_allow_html=True)
 
 # Image related to machine failure
-image_url = "https://gesrepair.com/wp-content/uploads/35DDEBA8-EA7C-4121-AC06-CEBA29C56D07-1024x592.jpeg"  # Replace with an actual image URL related to machine failure
+image_url = "https://gesrepair.com/wp-content/uploads/35DDEBA8-EA7C-4121-AC06-CEBA29C56D07-1024x592.jpeg"  
 st.image(image_url, use_column_width=True)
 
 # Introduction and dataset description
@@ -41,7 +41,7 @@ This Machine Failure Dashboard likely contains information about various machine
 """)
 
 # Load the machine failure dataset
-machine_failure = pd.read_csv('ai4i2020.csv')  # Replace with the actual file name
+machine_failure = pd.read_csv('ai4i2020.csv')  
 
 machine_failure.dropna(inplace=True)
 st.subheader('Here is a Sample of the Dataset')
