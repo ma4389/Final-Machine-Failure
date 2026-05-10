@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Title and Header
-st.markdown("<h1 style='text-align: center; color: #191970;'>Machine Failure Data Visualization And Model To Predict too</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #191970;'>Machine Failure Data Visualization And Prediction</h1>", unsafe_allow_html=True)
 
 # Image related to machine failure
 image_url = "https://gesrepair.com/wp-content/uploads/35DDEBA8-EA7C-4121-AC06-CEBA29C56D07-1024x592.jpeg"  
