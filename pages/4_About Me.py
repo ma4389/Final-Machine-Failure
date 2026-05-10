@@ -9,9 +9,9 @@ def main():
              "Eager to contribute to innovative projects and collaborate with like-minded professionals.")
     st.write("Name: Mohamed Ahmed Mohamed El Sayed")
     st.write("University: AlShorouk Academy")
-    st.write("Email:", "[ma4385019@gmail.com](mailto:ma4385019@gmail.com)")
-    st.write("GitHub:", "[https://github.com/ma4389](https://github.com/ma4389)")
-    st.write("LinkedIn:", "[https://www.linkedin.com/in/mohamed-ahmed-000b5929a/](https://www.linkedin.com/in/mohamed-ahmed-000b5929a/)")
+    st.write("Email:", "[muahmedmuhammedd@gmail.com](mailto:muahmedmuhammedd@gmail.com)")
+    st.write("GitHub:", "[https://github.com/MohamedAhmed3520](https://github.com/MohamedAhmed3520)")
+    st.write("LinkedIn:", "[https://www.linkedin.com/in/mohamed-ahmed-372730373/]https://www.linkedin.com/in/mohamed-ahmed-372730373/)")
     st.write("Kaggle:", "[https://www.kaggle.com/mohamedahmedlsayed](https://www.kaggle.com/mohamedahmedlsayed)")
     
 if __name__ == "__main__":
